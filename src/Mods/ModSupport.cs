@@ -64,5 +64,10 @@ namespace CSM.Mods
 
             return true;
         }
+        public bool SendToServer(CommandBase command)
+        {
+            Command.SendToServer(command);
+            return false;
+        }
     }
 }
