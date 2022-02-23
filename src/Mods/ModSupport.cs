@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using CSM.API.Commands;
 using CSM.API;
+using CSM.API.Commands;
 using CSM.Commands;
 using CSM.Helpers;
 using CSM.Util;
