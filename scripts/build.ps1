@@ -12,9 +12,8 @@ param (
     [switch]$Update = $false,
     [switch]$Build = $false,
     [switch]$Install = $false,
-    [string]$OutputDirectory = "..\src\bin\Release",
-    [string]$ModDirectory = "Default",
-    [string]$GameDirectory = ""
+    [string]$OutputDirectory = "..\src\csm\bin\Release",
+    [string]$ModDirectory = "Default"
  )
 
 # Functions
@@ -153,6 +152,7 @@ If ($Build)
         Write-Host "Using MSBuild at: $msbuild"
     }
 
+    & $msbuild "..\CSM.sln" /restore /t:CSM_API /p:Configuration=Release /p:Platform="Any CPU" 
     & $msbuild "..\CSM.sln" /restore /t:CSM /p:Configuration=Release /p:Platform="Any CPU" 
     If ($LastExitCode -ne 0)
     {
